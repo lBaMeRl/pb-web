@@ -2,6 +2,7 @@ export interface BootMessage {
   text: string
   status?: 'OK' | 'DONE' | 'LOADED' | 'ACTIVE'
   delay?: number
+  type?: 'text' | 'logo' | 'wait-for-logo'
 }
 
 export const bootMessages: BootMessage[] = [
@@ -16,11 +17,8 @@ export const bootMessages: BootMessage[] = [
   { text: '', delay: 100 },
   { text: 'Starting Pb.OS v2026.1...', delay: 200 },
   { text: '', delay: 100 },
-  { text: '  ____  _       ___  ____', delay: 50 },
-  { text: ' |  _ \\| |__   / _ \\/ ___|', delay: 50 },
-  { text: ' | |_) | \'_ \\ | | | \\___ \\', delay: 50 },
-  { text: ' |  __/| |_) || |_| |___) |', delay: 50 },
-  { text: ' |_|   |_.__/  \\___/|____/', delay: 50 },
+  { text: 'Loading Pb.OS logo...', type: 'wait-for-logo', delay: 100 },
+  { text: '', type: 'logo', delay: 300 },
   { text: '', delay: 100 },
   { text: 'Lead Operating System - Enterprise Edition', delay: 100 },
   { text: '', delay: 150 },

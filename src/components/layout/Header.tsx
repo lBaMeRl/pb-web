@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { DitheredImage } from '../ui/DitheredImage'
+import logoImage from '../../assets/images/logo.jpg'
 
 export function Header() {
   const [time, setTime] = useState(new Date())
@@ -11,7 +13,7 @@ export function Header() {
   }, [])
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-US', {
+    return date.toLocaleTimeString('en-GB', {
       hour12: false,
       hour: '2-digit',
       minute: '2-digit',
@@ -20,7 +22,7 @@ export function Header() {
   }
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString('en-GB', {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -41,13 +43,22 @@ export function Header() {
           <span className="text-phosphor-dim text-lg">Pb.OS version 2026.1</span>
         </div>
       </div>
-      <div className="text-right">
-        <div className="text-phosphor text-glow text-xl font-terminal">
-          {formatTime(time)}
+      <div className="flex items-center gap-4">
+        <div className="text-right">
+          <div className="text-phosphor text-glow text-xl font-terminal">
+            {formatTime(time)}
+          </div>
+          <div className="text-phosphor-dim text-lg">
+            {formatDate(time)}
+          </div>
         </div>
-        <div className="text-phosphor-dim text-lg">
-          {formatDate(time)}
-        </div>
+        <DitheredImage
+          src={logoImage}
+          alt="Chumbo Corporation Logo"
+          maxWidth={80}
+          maxHeight={80}
+          className="hidden sm:block"
+        />
       </div>
     </header>
   )
