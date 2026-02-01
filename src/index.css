@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* Custom CRT Theme */
+@theme {
+  --color-phosphor: #00ff00;
+  --color-phosphor-bright: #33ff33;
+  --color-phosphor-medium: #00cc00;
+  --color-phosphor-dim: #00aa00;
+  --color-phosphor-dark: #003300;
+  --color-crt-black: #0a0a0a;
+  --color-crt-bg: #001100;
+
+  --font-family-terminal: 'VT323', monospace;
+}
+
+/* Base styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-terminal);
+  background-color: var(--color-crt-black);
+  color: var(--color-phosphor);
+  overflow: hidden;
+}
+
+/* CRT Text Glow */
+.text-glow {
+  text-shadow:
+    0 0 5px var(--color-phosphor),
+    0 0 10px var(--color-phosphor-dim),
+    0 0 20px var(--color-phosphor-dark);
+}
+
+.text-glow-bright {
+  text-shadow:
+    0 0 5px var(--color-phosphor-bright),
+    0 0 10px var(--color-phosphor),
+    0 0 20px var(--color-phosphor-dim),
+    0 0 40px var(--color-phosphor-dark);
+}
+
+/* Scanlines overlay */
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 0, 0, 0.3) 1px,
+    rgba(0, 0, 0, 0.3) 2px
+  );
+  z-index: 100;
+}
+
+/* Vignette overlay */
+.vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.4) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 99;
+}
+
+/* CRT Flicker animation */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
+  75% { opacity: 0.99; }
+}
+
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+/* Typewriter cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Boot sequence fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Screen turn on effect */
+@keyframes screenOn {
+  0% {
+    transform: scaleY(0.01) scaleX(0);
+    filter: brightness(10);
+  }
+  50% {
+    transform: scaleY(0.01) scaleX(1);
+    filter: brightness(10);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(1);
+  }
+}
+
+.screen-on {
+  animation: screenOn 0.5s ease-out forwards;
+}
+
+/* Focus indicator for keyboard navigation */
+.focus-indicator {
+  outline: none;
+}
+
+.focus-indicator:focus {
+  outline: 2px solid var(--color-phosphor);
+  outline-offset: 2px;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: var(--color-phosphor);
+  color: var(--color-crt-black);
+}
