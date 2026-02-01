@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { DitheredImage } from '../ui/DitheredImage'
-import logoImage from '../../assets/images/logo.jpg'
+import logoImage from '../../assets/images/logo.png'
 
 export function Header() {
   const [time, setTime] = useState(new Date())
@@ -55,9 +55,10 @@ export function Header() {
         <DitheredImage
           src={logoImage}
           alt="Chumbo Corporation Logo"
-          maxWidth={80}
-          maxHeight={80}
+          maxWidth={100}
+          maxHeight={100}
           className="hidden sm:block"
+          noBorder
         />
       </div>
     </header>

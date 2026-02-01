@@ -3,6 +3,7 @@ export interface ProfileData {
   id: string
   status: string
   clearance: string
+  corp: string
   department: string
   position: string
   bio: string[]
@@ -10,15 +11,16 @@ export interface ProfileData {
 
 export const profile: ProfileData = {
   name: 'JOSÉ CHUMBO',
-  id: 'PB-2026-001',
+  id: 'PB-2023-12',
   status: 'ACTIVE',
   clearance: 'LEVEL 5',
-  department: 'ENGINEERING',
-  position: 'SENIOR DEVELOPER',
+  corp: 'Volkswagen - Group Services',
+  department: 'SMART CLOUD FACTORY',
+  position: 'DATA ENGINEER',
   bio: [
-    'Specialized in full-stack development and system architecture.',
-    'Expert in React, TypeScript, Node.js, and cloud infrastructure.',
-    'Passionate about creating elegant solutions to complex problems.',
-    'Building the future, one commit at a time.',
+    'Data Engineer at Volkswagen Group Services with expertise across Solutions Architecture, Business Inteligence, and Full-Stack Web Development.',
+    'Currently designing and implementing cloud-based solutions in Machine Vision, Gen AI, Cloud based solutions on top of AWS services.',
+    'AWS Certified: Cloud Practitioner & Solutions Architect Associate.',
+    'Experienced in building scalable solutions and cloud infrastructure to drive digital transformation in the factory.',
   ],
 }

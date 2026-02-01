@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { bootMessages, BootMessage } from '../../data/bootMessages'
 import { BootLine } from './BootLine'
 import { usePreloadedImage } from '../../hooks/usePreloadedImage'
-import logoImage from '../../assets/images/logo.jpg'
+import logoImage from '../../assets/images/logo.png'
 
 interface BootSequenceProps {
   onComplete: () => void

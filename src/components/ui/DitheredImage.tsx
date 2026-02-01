@@ -7,6 +7,7 @@ interface DitheredImageProps {
   maxWidth?: number
   maxHeight?: number
   className?: string
+  noBorder?: boolean
 }
 
 export function DitheredImage({
@@ -15,6 +16,7 @@ export function DitheredImage({
   maxWidth = 250,
   maxHeight = 300,
   className = '',
+  noBorder = false,
 }: DitheredImageProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [loading, setLoading] = useState(true)
@@ -67,7 +69,7 @@ export function DitheredImage({
       )}
       <canvas
         ref={canvasRef}
-        className={`border border-phosphor-dark ${loading ? 'invisible' : 'visible'}`}
+        className={`${noBorder ? '' : 'border border-phosphor-dark'} ${loading ? 'invisible' : 'visible'}`}
         aria-label={alt}
         role="img"
       />
