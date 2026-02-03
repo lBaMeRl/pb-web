@@ -132,13 +132,13 @@ function ExperienceContent() {
       {experience.map((exp, index) => (
         <div key={index} className="border-l-2 border-phosphor-dark pl-3 pb-2">
           <div className="flex items-start justify-between gap-2">
-            <h4 className="text-phosphor text-glow font-bold">{exp.title}</h4>
+            <h4 className="text-phosphor text-glow font-bold text-base">{exp.title}</h4>
           </div>
-          <p className="text-phosphor-dim text-sm">{exp.company}</p>
-          <p className="text-phosphor-dark text-xs">
+          <p className="text-phosphor-dim text-base">{exp.company}</p>
+          <p className="text-phosphor-dark text-sm">
             {exp.period} · {exp.duration}
           </p>
-          <p className="text-phosphor-dark text-xs">{exp.location} · {exp.type}</p>
+          <p className="text-phosphor-dark text-sm">{exp.location} · {exp.type}</p>
           {exp.description && (
             <p className="text-phosphor text-sm mt-1 leading-snug">{exp.description}</p>
           )}
@@ -170,12 +170,12 @@ function EducationContent() {
         </h4>
         {education.map((edu, index) => (
           <div key={index} className="border-l-2 border-phosphor-dark pl-3 pb-2">
-            <h4 className="text-phosphor text-glow font-bold">{edu.institution}</h4>
-            <p className="text-phosphor-dim text-sm">
+            <h4 className="text-phosphor text-glow font-bold text-base">{edu.institution}</h4>
+            <p className="text-phosphor-dim text-base">
               {edu.degree}, {edu.field}
             </p>
-            <p className="text-phosphor-dark text-xs">{edu.period}</p>
-            {edu.grade && <p className="text-phosphor-dark text-xs">Grade: {edu.grade}</p>}
+            <p className="text-phosphor-dark text-sm">{edu.period}</p>
+            {edu.grade && <p className="text-phosphor-dark text-sm">Grade: {edu.grade}</p>}
             {edu.achievements && edu.achievements.length > 0 && (
               <div className="mt-2 p-2 border border-phosphor-dark/50 bg-crt-black/50">
                 {edu.achievements.map((achievement, achIndex) => (
@@ -211,14 +211,14 @@ function EducationContent() {
         </h4>
         {certifications.map((cert, index) => (
           <div key={index} className="border-l-2 border-phosphor-medium pl-3 pb-2">
-            <h4 className="text-phosphor text-glow font-bold">{cert.name}</h4>
-            <p className="text-phosphor-dim text-sm">{cert.issuer}</p>
-            <p className="text-phosphor-dark text-xs">
+            <h4 className="text-phosphor text-glow font-bold text-base">{cert.name}</h4>
+            <p className="text-phosphor-dim text-base">{cert.issuer}</p>
+            <p className="text-phosphor-dark text-sm">
               Issued {cert.issueDate}
               {cert.expiryDate && ` · Expires ${cert.expiryDate}`}
             </p>
             {cert.credentialId && (
-              <p className="text-phosphor-dark text-xs font-mono">
+              <p className="text-phosphor-dark text-sm font-mono">
                 ID: {cert.credentialId}
               </p>
             )}
