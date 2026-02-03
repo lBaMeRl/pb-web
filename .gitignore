@@ -31,3 +31,6 @@ npm-debug.log*
 
 # Generated
 vite.config.d.ts
+
+# Reference images
+frontend-examples/

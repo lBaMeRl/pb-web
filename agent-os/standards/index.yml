@@ -1,6 +1,35 @@
 # Agent OS Standards Index
 
+components:
+  crt-visual-hierarchy:
+    description: Phosphor color variants and glow effects for visual hierarchy
+  folder-structure:
+    description: Component organization by composition role (ui, layout, screens, effects)
+  keyboard-focus:
+    description: Controlled focus pattern with isFocused prop for terminal-style navigation
+
+css:
+  animation-naming:
+    description: Keyframe names describe effect, class names add context prefix
+  crt-effects:
+    description: Custom CSS classes for complex CRT visual effects
+  theme-variables:
+    description: Tailwind 4 @theme block for colors and fonts
+
+data:
+  env-urls:
+    description: External URLs via VITE_* env vars with '#' fallback
+  interface-export:
+    description: Colocate TypeScript interfaces with data in same file
+
 global:
   tech-stack:
     description: Needs description - run /index-standards
 
+hooks:
+  options-interface:
+    description: Hooks accept single UseXxxOptions object for typed config
+  return-shape:
+    description: Hooks return object with state, actions, and computed values
+  skip-callback:
+    description: Timed sequences include skip() when appropriate for UX

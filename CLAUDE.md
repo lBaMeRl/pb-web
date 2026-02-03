@@ -58,3 +58,21 @@ Static data files in `src/data/` (profile.ts, socials.ts, bootMessages.ts). Soci
 - Full TypeScript strict mode with interfaces for all props
 - Minimal dependencies (only React and React DOM in production)
 - Accessibility via ARIA labels and semantic HTML
+
+## Standards
+
+This project has documented standards in `agent-os/standards/`. **You MUST read the relevant standard files before planning or making changes to any section of the codebase.**
+
+| Area | Standards Location | When to Read |
+|------|-------------------|--------------|
+| Components | `agent-os/standards/components/` | Adding/modifying components |
+| CSS/Styling | `agent-os/standards/css/` | Adding styles, animations, theme changes |
+| Data Layer | `agent-os/standards/data/` | Adding/modifying data files |
+| Custom Hooks | `agent-os/standards/hooks/` | Creating or modifying hooks |
+
+### Compliance Rules
+
+1. **Before planning**: Read all standards in the affected area(s)
+2. **Before implementing**: Verify your approach complies with the standards
+3. **If conflicts arise**: Ask the user whether to make an exception or update the standard — do not silently deviate
+4. **Index file**: `agent-os/standards/index.yml` lists all standards with descriptions
