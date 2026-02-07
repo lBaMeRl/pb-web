@@ -140,29 +140,68 @@ body {
   color: var(--color-crt-black);
 }
 
-/* Custom CRT-style scrollbar */
+/* Custom CRT-style scrollbar — Windows 3.1 inspired, green phosphor theme */
 .crt-scrollbar {
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: var(--color-phosphor-dim) var(--color-crt-black);
+  overflow-y: scroll !important;
 }
 
 .crt-scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 16px;
 }
 
 .crt-scrollbar::-webkit-scrollbar-track {
   background: var(--color-crt-black);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0px,
+    transparent 2px,
+    var(--color-phosphor-dark) 2px,
+    var(--color-phosphor-dark) 3px
+  );
   border-left: 1px solid var(--color-phosphor-dark);
+  border-right: 1px solid var(--color-phosphor-dark);
 }
 
 .crt-scrollbar::-webkit-scrollbar-thumb {
   background: var(--color-phosphor-dark);
-  border: 1px solid var(--color-phosphor-dim);
+  border-top: 2px solid var(--color-phosphor-dim);
+  border-left: 2px solid var(--color-phosphor-dim);
+  border-bottom: 2px solid var(--color-crt-black);
+  border-right: 2px solid var(--color-crt-black);
+  box-shadow:
+    inset 1px 1px 0 rgba(0, 255, 0, 0.1),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .crt-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: var(--color-phosphor-dim);
-  box-shadow: 0 0 8px var(--color-phosphor-dim);
+  background: var(--color-phosphor-medium);
+  border-top-color: var(--color-phosphor-bright);
+  border-left-color: var(--color-phosphor-bright);
+  box-shadow:
+    0 0 8px var(--color-phosphor-dim),
+    inset 1px 1px 0 rgba(0, 255, 0, 0.2),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.crt-scrollbar::-webkit-scrollbar-button {
+  height: 16px;
+  background: var(--color-phosphor-dark);
+  border-top: 2px solid var(--color-phosphor-dim);
+  border-left: 2px solid var(--color-phosphor-dim);
+  border-bottom: 2px solid var(--color-crt-black);
+  border-right: 2px solid var(--color-crt-black);
+}
+
+.crt-scrollbar::-webkit-scrollbar-button:hover {
+  background: var(--color-phosphor-medium);
+  border-top-color: var(--color-phosphor-bright);
+  border-left-color: var(--color-phosphor-bright);
+}
+
+.crt-scrollbar::-webkit-scrollbar-corner {
+  background: var(--color-crt-black);
 }
 
 /* Tab switch animation */

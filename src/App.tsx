@@ -27,10 +27,16 @@ function App() {
             currentScreen={currentScreen}
             onNavigate={setCurrentScreen}
           />
-          <main className="flex-1 overflow-auto p-4">
+          <main className="flex-1 overflow-auto p-4 crt-scrollbar">
             {currentScreen === 'employee' && <EmployeeScreen />}
             {currentScreen === 'socials' && <SocialsScreen />}
           </main>
+          <footer className="shrink-0 px-4 pt-2 pb-1 border-t border-phosphor-dark bg-crt-black">
+            <span className="text-phosphor-dim text-sm">
+              {currentScreen === 'employee' && `RECORD LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}`}
+              {currentScreen === 'socials' && 'WARNING: External links leave the Pb.OS environment'}
+            </span>
+          </footer>
         </div>
       )}
     </Terminal>

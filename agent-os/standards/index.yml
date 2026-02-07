@@ -17,6 +17,8 @@ css:
     description: Tailwind 4 @theme block for colors and fonts
 
 data:
+  date-format:
+    description: All dates use DD/MM/YYYY format via en-GB locale
   env-urls:
     description: External URLs via VITE_* env vars with '#' fallback
   interface-export:

@@ -36,11 +36,6 @@ export function SocialsScreen() {
         ))}
       </div>
 
-      <div className="mt-6 text-center">
-        <span className="text-phosphor-dark text-sm">
-          WARNING: External links leave the Pb.OS environment
-        </span>
-      </div>
     </div>
   )
 }
